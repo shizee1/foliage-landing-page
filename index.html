@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Листва — комнатные растения с доставкой и гарантией приживаемости</title>
+  <meta name="description" content="Интернет-магазин комнатных растений «Листва»: подбор по освещению и уходу, бесплатная доставка от 3 000 ₽, гарантия приживаемости 30 дней.">
+  <link rel="preload" href="fonts/onest-400-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/cormorant-garamond-600-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <header class="header" data-header>
+    <div class="container header__inner">
+      <a class="header__logo" href="index.html">Листва</a>
+
+      <nav class="nav" aria-label="Основное меню">
+        <ul class="nav__list">
+          <li class="nav__item"><a class="nav__link" href="catalog.html">Каталог</a></li>
+          <li class="nav__item"><a class="nav__link" href="#care">Уход</a></li>
+          <li class="nav__item"><a class="nav__link" href="#about">О магазине</a></li>
+          <li class="nav__item"><a class="nav__link" href="#delivery">Доставка</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <a class="icon-btn header__search" href="catalog.html#search">
+          <svg class="icon-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.3-4.3"></path>
+          </svg>
+          <span>Поиск</span>
+        </a>
+
+        <button class="cart-btn" type="button" data-cart-open aria-expanded="false" aria-controls="cart-panel">
+          <svg class="icon-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+            <path d="M3 6h18"></path>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span>Корзина</span>
+          <span class="badge badge--empty" data-cart-count>0</span>
+        </button>
+
+        <button class="burger" type="button" data-burger aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="icon-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M4 6h16"></path>
+            <path d="M4 12h16"></path>
+            <path d="M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu" data-mobile-menu>
+      <div class="container">
+        <ul class="mobile-menu__list">
+          <li><a class="mobile-menu__link" href="catalog.html">Каталог</a></li>
+          <li><a class="mobile-menu__link" href="#care">Уход</a></li>
+          <li><a class="mobile-menu__link" href="#about">О магазине</a></li>
+          <li><a class="mobile-menu__link" href="#delivery">Доставка</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Первый экран -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <h1 class="hero__title" id="hero-title">Растения, которые приживутся у вас дома</h1>
+          <p class="hero__text">Подберём по освещению и уходу и привезём с гарантией приживаемости.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="catalog.html">В каталог</a>
+            <a class="btn btn--ghost" href="#light">Как выбрать</a>
+          </div>
+        </div>
+
+        <div class="hero__media">
+          <img class="hero__image" src="img/hero.webp" alt="Крупнолистная монстера в светлой комнате" width="720" height="900" fetchpriority="high" decoding="async">
+        </div>
+      </div>
+    </section>
+
+    <!-- Преимущества -->
+    <section class="section features" aria-labelledby="features-title">
+      <div class="container">
+        <h2 class="visually-hidden" id="features-title">Преимущества</h2>
+        <div class="features__grid">
+          <article class="feature">
+            <h3 class="feature__title">Бесплатная доставка</h3>
+            <p class="feature__text">При заказе от 3 000 ₽.</p>
+          </article>
+          <article class="feature">
+            <h3 class="feature__title">Гарантия 30 дней</h3>
+            <p class="feature__text">Заменим растение, если оно не прижилось.</p>
+          </article>
+          <article class="feature">
+            <h3 class="feature__title">Памятка в каждой посылке</h3>
+            <p class="feature__text">Коротко про свет и полив именно вашего растения.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Популярные растения -->
+    <section class="section popular" aria-labelledby="popular-title">
+      <div class="container">
+        <div class="section__head">
+          <h2 id="popular-title">Популярные растения</h2>
+          <a class="section__link" href="catalog.html">Весь каталог</a>
+        </div>
+        <div class="popular__grid" data-popular-grid>
+          <article class="product-card">
+      <div class="product-card__media">
+        <img class="product-card__image" src="img/plants/card/monstera-1.webp" alt="Монстера деликатесная" width="420" height="525" loading="eager" fetchpriority="high" decoding="async">
+      </div>
+      <div class="product-card__body">
+        <h3 class="product-card__title">
+          <a class="product-card__link" href="product.html?id=monstera">Монстера деликатесная</a>
+        </h3>
+        <p class="product-card__meta">Рассеянный свет, средний уход</p>
+        <div class="product-card__foot">
+          <span class="product-card__price">1 890 ₽</span>
+          <button class="btn btn--primary btn--small product-card__buy" type="button" data-add-to-cart="monstera" data-size-index="0">В корзину</button>
+        </div>
+      </div>
+    </article>
+    <article class="product-card">
+      <div class="product-card__media">
+        <img class="product-card__image" src="img/plants/card/zamioculcas-1.webp" alt="Замиокулькас" width="420" height="525" loading="eager" fetchpriority="high" decoding="async">
+      </div>
+      <div class="product-card__body">
+        <h3 class="product-card__title">
+          <a class="product-card__link" href="product.html?id=zamioculcas">Замиокулькас</a>
+        </h3>
+        <p class="product-card__meta">Тень, лёгкий уход</p>
+        <div class="product-card__foot">
+          <span class="product-card__price">1 290 ₽</span>
+          <button class="btn btn--primary btn--small product-card__buy" type="button" data-add-to-cart="zamioculcas" data-size-index="0">В корзину</button>
+        </div>
+      </div>
+    </article>
+    <article class="product-card">
+      <div class="product-card__media">
+        <img class="product-card__image" src="img/plants/card/sansevieria-1.webp" alt="Сансевиерия" width="420" height="525" loading="lazy" decoding="async">
+      </div>
+      <div class="product-card__body">
+        <h3 class="product-card__title">
+          <a class="product-card__link" href="product.html?id=sansevieria">Сансевиерия</a>
+        </h3>
+        <p class="product-card__meta">Тень, лёгкий уход</p>
+        <div class="product-card__foot">
+          <span class="product-card__price">790 ₽</span>
+          <button class="btn btn--primary btn--small product-card__buy" type="button" data-add-to-cart="sansevieria" data-size-index="0">В корзину</button>
+        </div>
+      </div>
+    </article>
+    <article class="product-card">
+      <div class="product-card__media">
+        <img class="product-card__image" src="img/plants/card/ficus-lyrata-1.webp" alt="Фикус лирата" width="420" height="525" loading="lazy" decoding="async">
+      </div>
+      <div class="product-card__body">
+        <h3 class="product-card__title">
+          <a class="product-card__link" href="product.html?id=ficus-lyrata">Фикус лирата</a>
+        </h3>
+        <p class="product-card__meta">Солнце, средний уход</p>
+        <div class="product-card__foot">
+          <span class="product-card__price">2 490 ₽</span>
+          <button class="btn btn--primary btn--small product-card__buy" type="button" data-add-to-cart="ficus-lyrata" data-size-index="0">В корзину</button>
+        </div>
+      </div>
+    </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Подбор по освещению -->
+    <section class="section light" id="light" aria-labelledby="light-title">
+      <div class="container">
+        <div class="section__head">
+          <h2 id="light-title">Подберите по освещению</h2>
+        </div>
+        <div class="light__grid">
+          <a class="light-tile" href="catalog.html?light=shade">
+            <span class="light-tile__title">Тень</span>
+            <span class="light-tile__text">Для северных окон и глубины комнаты</span>
+          </a>
+          <a class="light-tile light-tile--diffuse" href="catalog.html?light=diffuse">
+            <span class="light-tile__title">Рассеянный свет</span>
+            <span class="light-tile__text">Для восточных и западных окон</span>
+          </a>
+          <a class="light-tile light-tile--sun" href="catalog.html?light=sun">
+            <span class="light-tile__title">Яркое солнце</span>
+            <span class="light-tile__text">Для южных окон и балконов</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Подписка -->
+    <section class="section" aria-labelledby="subscribe-title">
+      <div class="container">
+        <div class="subscribe">
+          <div class="subscribe__grid">
+            <div class="subscribe__content">
+              <h2 class="subscribe__title" id="subscribe-title">Советы по уходу раз в месяц</h2>
+              <p class="subscribe__text">Без рекламы. Отписаться можно в одно нажатие.</p>
+            </div>
+            <form class="form-inline subscribe__form" data-subscribe novalidate>
+              <div class="field">
+                <label class="visually-hidden" for="subscribe-email">Электронная почта</label>
+                <input class="field__input" id="subscribe-email" type="email" name="email" placeholder="Ваша почта" autocomplete="email" required>
+                <span class="field__error" data-subscribe-error hidden></span>
+                <span class="field__success" data-subscribe-success hidden></span>
+              </div>
+              <button class="btn btn--primary" type="submit" data-subscribe-submit>Подписаться</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Уход / О магазине / Доставка -->
+    <section class="section" aria-labelledby="info-title">
+      <div class="container">
+        <h2 class="visually-hidden" id="info-title">Полезная информация</h2>
+        <div class="info__grid">
+          <article class="info" id="care">
+            <h3 class="info__title">Уход</h3>
+            <p class="info__text">К каждому растению прилагаем памятку по свету, поливу и подкормке. Если сомневаетесь в выборе, напишите нам — подскажем.</p>
+          </article>
+          <article class="info" id="about">
+            <h3 class="info__title">О магазине</h3>
+            <p class="info__text">«Листва» — небольшой магазин комнатных растений. Мы выращиваем и отбираем растения сами, поэтому точно знаем, что продаём.</p>
+          </article>
+          <article class="info" id="delivery">
+            <h3 class="info__title">Доставка</h3>
+            <p class="info__text">По городу — 1–2 дня, по России — 3–7 дней. Бесплатно от 3 000 ₽. Растения уезжают в день заказа в упаковке с защитой корней.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <p class="footer__logo">Листва</p>
+          <p class="footer__about">Комнатные растения с доставкой и заботой о приживаемости.</p>
+        </div>
+
+        <nav class="footer__col" aria-label="Магазин">
+          <p class="footer__title">Магазин</p>
+          <a class="footer__link" href="catalog.html">Каталог</a>
+          <a class="footer__link" href="catalog.html?category=large">Крупные</a>
+          <a class="footer__link" href="catalog.html?care=easy">Лёгкий уход</a>
+        </nav>
+
+        <nav class="footer__col" aria-label="Помощь">
+          <p class="footer__title">Помощь</p>
+          <a class="footer__link" href="index.html#care">Уход</a>
+          <a class="footer__link" href="index.html#delivery">Доставка</a>
+          <a class="footer__link" href="index.html#about">Гарантия</a>
+        </nav>
+
+        <nav class="footer__col" aria-label="Контакты">
+          <p class="footer__title">Контакты</p>
+          <a class="footer__link" href="mailto:hello@listva.example">hello@listva.example</a>
+          <a class="footer__link" href="tel:+70000000000">+7 000 000-00-00</a>
+        </nav>
+      </div>
+
+      <p class="footer__bottom">© 2026 Листва. Учебный проект.</p>
+    </div>
+  </footer>
+
+  <!-- Панель корзины -->
+  <div class="cart-overlay" data-cart-overlay hidden></div>
+  <div class="cart" id="cart-panel" data-cart-panel role="dialog" aria-modal="true" aria-labelledby="cart-title" aria-hidden="true" inert>
+    <div class="cart__head">
+      <h2 class="cart__title" id="cart-title">Корзина</h2>
+      <button class="cart__close" type="button" data-cart-close aria-label="Закрыть корзину">
+        <svg class="icon-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M18 6 6 18"></path>
+          <path d="m6 6 12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="cart__body" data-cart-list></div>
+    <div class="cart__foot">
+      <p class="cart__success" data-cart-success hidden></p>
+      <p class="cart__hint" data-cart-hint hidden></p>
+      <div class="cart__total">
+        <span>Итого</span>
+        <span data-cart-total>0 ₽</span>
+      </div>
+      <button class="btn btn--primary btn--wide" type="button" data-cart-checkout>Оформить заказ</button>
+    </div>
+  </div>
+
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

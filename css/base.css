@@ -1,0 +1,245 @@
+/* ==========================================================================
+   Листва — base.css
+   Переменные, сброс, типографика, базовая сетка
+   ========================================================================== */
+
+:root {
+  /* Цвета */
+  --color-bg: #f4f7f2;
+  --color-surface: #ffffff;
+  --color-text: #14241b;
+  --color-text-muted: #5e6f64;
+  --color-green: #1f5c3f;
+  --color-green-dark: #17492f;
+  --color-lime: #cde86b;
+  --color-border: #dde5da;
+  --color-photo: #c7d9c1;
+
+  /* Шрифты */
+  --font-heading: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-text: "Onest", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+
+  /* Размеры текста (мобильный / десктоп) */
+  --text-h1: 40px;
+  --text-h2: 28px;
+  --text-h3: 22px;
+  --text-body: 17px;
+  --text-small: 14px;
+  --lh: 1.6;
+
+  /* Радиусы */
+  --radius-card: 16px;
+  --radius-field: 10px;
+  --radius-pill: 999px;
+
+  /* Сетка */
+  --container: 1200px;
+  --gutter: 16px;
+  --section-gap: 56px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --gutter: 24px;
+    --section-gap: 76px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --text-h1: 56px;
+    --text-h2: 36px;
+  }
+}
+
+/* --- Сброс ------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-text);
+  font-size: var(--text-body);
+  line-height: var(--lh);
+  -webkit-font-smoothing: antialiased;
+}
+
+body.is-locked {
+  overflow: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+ul,
+ol,
+dl,
+dd {
+  margin: 0;
+}
+
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+svg {
+  display: block;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-green);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* --- Типографика ------------------------------------------------------- */
+
+h1,
+h2,
+h3,
+.title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: var(--text-h1);
+}
+
+h2 {
+  font-size: var(--text-h2);
+}
+
+h3 {
+  font-size: var(--text-h3);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.text-small {
+  font-size: var(--text-small);
+}
+
+/* --- Сетка и служебные классы ------------------------------------------ */
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding-inline: var(--gutter);
+}
+
+.section {
+  margin-top: var(--section-gap);
+}
+
+.section__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 24px;
+  margin-bottom: 24px;
+}
+
+.section__link {
+  font-size: var(--text-small);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 0.2s ease;
+}
+
+.section__link:hover {
+  color: var(--color-green);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: var(--gutter);
+  z-index: 100;
+  padding: 12px 20px;
+  border-radius: var(--radius-pill);
+  background: var(--color-green);
+  color: #ffffff;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

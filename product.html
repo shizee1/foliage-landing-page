@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Карточка растения — Листва</title>
+  <meta name="description" content="Описание растения, условия ухода, варианты размера горшка и доставка.">
+  <link rel="preload" href="fonts/onest-400-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/cormorant-garamond-600-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <script>
+    /* Заранее начинаем грузить основное фото товара — id совпадает с именем файла. */
+    (function () {
+      var match = /[?&]id=([a-z-]+)/.exec(window.location.search);
+      if (!match) return;
+      var link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'image';
+      link.type = 'image/webp';
+      link.href = 'img/plants/' + match[1] + '-1.webp';
+      link.setAttribute('fetchpriority', 'high');
+      document.head.appendChild(link);
+    })();
+  </script>
+  <link rel="stylesheet" href="fonts/fonts.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <header class="header" data-header>
+    <div class="container header__inner">
+      <a class="header__logo" href="index.html">Листва</a>
+
+      <nav class="nav" aria-label="Основное меню">
+        <ul class="nav__list">
+          <li class="nav__item"><a class="nav__link" href="catalog.html">Каталог</a></li>
+          <li class="nav__item"><a class="nav__link" href="index.html#care">Уход</a></li>
+          <li class="nav__item"><a class="nav__link" href="index.html#about">О магазине</a></li>
+          <li class="nav__item"><a class="nav__link" href="index.html#delivery">Доставка</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <a class="icon-btn header__search" href="catalog.html#search">
+          <svg class="icon-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.3-4.3"></path>
+          </svg>
+          <span>Поиск</span>
+        </a>
+
+        <button class="cart-btn" type="button" data-cart-open aria-expanded="false" aria-controls="cart-panel">
+          <svg class="icon-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path>
+            <path d="M3 6h18"></path>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span>Корзина</span>
+          <span class="badge badge--empty" data-cart-count>0</span>
+        </button>
+
+        <button class="burger" type="button" data-burger aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-menu">
+          <svg class="icon-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+            <path d="M4 6h16"></path>
+            <path d="M4 12h16"></path>
+            <path d="M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu" data-mobile-menu>
+      <div class="container">
+        <ul class="mobile-menu__list">
+          <li><a class="mobile-menu__link" href="catalog.html">Каталог</a></li>
+          <li><a class="mobile-menu__link" href="index.html#care">Уход</a></li>
+          <li><a class="mobile-menu__link" href="index.html#about">О магазине</a></li>
+          <li><a class="mobile-menu__link" href="index.html#delivery">Доставка</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="container" data-product-page>
+      <nav class="breadcrumbs" aria-label="Хлебные крошки">
+        <ol class="breadcrumbs__list">
+          <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="index.html">Главная</a></li>
+          <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="catalog.html">Каталог</a></li>
+          <li class="breadcrumbs__item"><span data-product-breadcrumb>Растение</span></li>
+        </ol>
+      </nav>
+
+      <div class="product__layout" data-product-layout>
+        <div class="gallery">
+          <div class="gallery__main">
+            <img class="gallery__image" data-gallery-main src="img/plants/monstera-1.webp" alt="" width="720" height="900" fetchpriority="high" decoding="async">
+          </div>
+          <div class="gallery__thumbs" data-gallery-thumbs></div>
+        </div>
+
+        <div class="product__info">
+          <h1 class="product__title" data-product-title>Растение</h1>
+          <p class="product__price" data-product-price>—</p>
+          <p class="product__text" data-product-short></p>
+
+          <div class="product__tags" data-product-tags></div>
+
+          <div class="product__block">
+            <p class="product__label" id="size-label">Размер горшка</p>
+            <div class="size-switch" data-product-sizes role="group" aria-labelledby="size-label"></div>
+          </div>
+
+          <div class="product__actions">
+            <div class="stepper">
+              <button class="stepper__btn" type="button" data-qty-dec aria-label="Уменьшить количество">−</button>
+              <span class="stepper__value" data-qty aria-live="polite">1</span>
+              <button class="stepper__btn" type="button" data-qty-inc aria-label="Увеличить количество">+</button>
+            </div>
+            <button class="btn btn--primary" type="button" data-product-add>В корзину</button>
+          </div>
+        </div>
+      </div>
+
+      <section class="section" aria-labelledby="product-info-title">
+        <h2 class="visually-hidden" id="product-info-title">Информация о растении</h2>
+        <div class="tabs">
+          <div class="tabs__list" role="tablist" aria-label="Информация о растении">
+            <button class="tabs__tab" type="button" role="tab" id="tab-desc" aria-controls="panel-desc" aria-selected="true" data-tab="desc">Описание</button>
+            <button class="tabs__tab" type="button" role="tab" id="tab-care" aria-controls="panel-care" aria-selected="false" tabindex="-1" data-tab="care">Уход</button>
+            <button class="tabs__tab" type="button" role="tab" id="tab-delivery" aria-controls="panel-delivery" aria-selected="false" tabindex="-1" data-tab="delivery">Доставка</button>
+          </div>
+          <div class="tabs__panel" id="panel-desc" role="tabpanel" aria-labelledby="tab-desc" data-tab-panel="desc"></div>
+          <div class="tabs__panel" id="panel-care" role="tabpanel" aria-labelledby="tab-care" data-tab-panel="care" hidden></div>
+          <div class="tabs__panel" id="panel-delivery" role="tabpanel" aria-labelledby="tab-delivery" data-tab-panel="delivery" hidden></div>
+        </div>
+      </section>
+
+      <section class="section related" aria-labelledby="related-title">
+        <div class="section__head">
+          <h2 id="related-title">Похожие растения</h2>
+          <a class="section__link" href="catalog.html">Весь каталог</a>
+        </div>
+        <div class="related__grid" data-related-grid></div>
+      </section>
+    </div>
+
+    <div class="container" data-product-notfound hidden>
+      <div class="product__notfound">
+        <h1 class="product__notfound-title">Такого растения не нашлось</h1>
+        <p class="product__notfound-text">Возможно, ссылка устарела или товар снят с продажи. Посмотрите весь каталог.</p>
+        <a class="btn btn--primary" href="catalog.html">Перейти в каталог</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <p class="footer__logo">Листва</p>
+          <p class="footer__about">Комнатные растения с доставкой и заботой о приживаемости.</p>
+        </div>
+
+        <nav class="footer__col" aria-label="Магазин">
+          <p class="footer__title">Магазин</p>
+          <a class="footer__link" href="catalog.html">Каталог</a>
+          <a class="footer__link" href="catalog.html?category=large">Крупные</a>
+          <a class="footer__link" href="catalog.html?care=easy">Лёгкий уход</a>
+        </nav>
+
+        <nav class="footer__col" aria-label="Помощь">
+          <p class="footer__title">Помощь</p>
+          <a class="footer__link" href="index.html#care">Уход</a>
+          <a class="footer__link" href="index.html#delivery">Доставка</a>
+          <a class="footer__link" href="index.html#about">Гарантия</a>
+        </nav>
+
+        <nav class="footer__col" aria-label="Контакты">
+          <p class="footer__title">Контакты</p>
+          <a class="footer__link" href="mailto:hello@listva.example">hello@listva.example</a>
+          <a class="footer__link" href="tel:+70000000000">+7 000 000-00-00</a>
+        </nav>
+      </div>
+
+      <p class="footer__bottom">© 2026 Листва. Учебный проект.</p>
+    </div>
+  </footer>
+
+  <!-- Панель корзины -->
+  <div class="cart-overlay" data-cart-overlay hidden></div>
+  <div class="cart" id="cart-panel" data-cart-panel role="dialog" aria-modal="true" aria-labelledby="cart-title" aria-hidden="true" inert>
+    <div class="cart__head">
+      <h2 class="cart__title" id="cart-title">Корзина</h2>
+      <button class="cart__close" type="button" data-cart-close aria-label="Закрыть корзину">
+        <svg class="icon-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <path d="M18 6 6 18"></path>
+          <path d="m6 6 12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="cart__body" data-cart-list></div>
+    <div class="cart__foot">
+      <p class="cart__success" data-cart-success hidden></p>
+      <p class="cart__hint" data-cart-hint hidden></p>
+      <div class="cart__total">
+        <span>Итого</span>
+        <span data-cart-total>0 ₽</span>
+      </div>
+      <button class="btn btn--primary btn--wide" type="button" data-cart-checkout>Оформить заказ</button>
+    </div>
+  </div>
+
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/product.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
