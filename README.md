@@ -53,7 +53,6 @@ foliage-landing-page/
 │   ├── CREDITS.md        # авторы и лицензии на фотографии
 │   └── manifest.json     # служебный список файлов изображений
 ├── fonts/                # локальные Cormorant Garamond и Onest
-├── robots.txt
 └── README.md
 ```
 
